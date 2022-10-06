@@ -152,28 +152,28 @@
   <!-- Hero Banner -->
   <div class="container mx-auto max-w-7xl hero-banner">
     <!-- Slide Banner -->
-    <div class="overflow-hidden owl-carousel owl-theme rounded-xl">
-      <div class="overflow-hidden rounded-xl item">
+    <div class="overflow-hidden rounded-sm shadow-xl owl-carousel owl-theme md:rounded-xl">
+      <div class="item">
         <img src="./assets/img/demo-index-banner01.jpg" alt="">
       </div>
-      <div class="overflow-hidden rounded-xl item">
+      <div class="item">
+        <img src="./assets/img/demo-index-banner02.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="./assets/img/demo-index-banner03.jpg" alt="">
+      </div>
+      <div class="rtem">
         <img src="./assets/img/demo-index-banner01.jpg" alt="">
       </div>
-      <div class="overflow-hidden rounded-xl item">
-        <img src="./assets/img/demo-index-banner01.jpg" alt="">
-      </div>
-      <div class="overflow-hidden rounded-xl item">
-        <img src="./assets/img/demo-index-banner01.jpg" alt="">
-      </div>
-      <div class="overflow-hidden rounded-xl item">
-        <img src="./assets/img/demo-index-banner01.jpg" alt="">
+      <div class="item">
+        <img src="./assets/img/demo-index-banner02.jpg" alt="">
       </div>
     </div>
   </div>
 
   <!-- main -->
-  <main class="container mx-auto max-w-7xl">
-    <h2 class="my-8 text-3xl main-title">
+  <main class="container mx-auto mt-20 max-w-7xl">
+    <h2 class="main-title">
       主打產品
     </h2>
     
@@ -228,7 +228,7 @@
 
     <!-- tabs -->
     <section class="container py-8 pb-10 mx-auto">
-      <h2 class="my-8 text-3xl main-title">
+      <h2 class="main-title">
         暢銷熱賣
       </h2>
       
@@ -243,7 +243,7 @@
           <nav class="relative z-0 flex w-full overflow-hidden rounded-t-lg " aria-label="Tabs">
             <template x-for="(tab, ix) in tabs" :key="tab.id">
               <a href="#" :class="tab.active ? 'bg-transparent' : 'bg-transparent'"
-                class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-center group hover:bg-gray-50 focus:z-10"
+                class="relative flex-1 min-w-0 px-4 py-4 overflow-hidden text-center cursor-pointer group hover:bg-gray-50 focus:z-10"
                 :aria-current="tab.active ? 'page' : 'undefined'"
                 @click.prevent="tabs.forEach(tab => tab.active = false); tabs[ix].active = true">
                 <span x-text="tab.title" :class="tab.active ? 'text-black' : 'text-gray-500'"></span>
@@ -259,7 +259,7 @@
               <div class="hidden w-2/5 lg:block">
                 <div class="relative p-2">
                   <h3 class="absolute px-4 text-3xl font-bold text-white bottom-4">瞬間彩色日拋系列無論你是自信率性、優雅迷人或清新閃耀，都能綻放自信光彩</h3>
-                  <img src="./assets/img/demo-hot-sale-tab1.jpg" alt="" class="object-contain w-full">
+                  <img src="./assets/img/demo-hot-sale-tab1.jpg" alt="" class="object-contain w-full shadow-xl rounded-xl">
                 </div>
               </div>
               <div class="grid w-full grid-cols-2 gap-4 lg:w-3/5">
@@ -373,19 +373,239 @@
             </section>
 
             <!-- Tab 2 content -->
-            <section class="p-2 space-y-4" x-show="tabs.find(tab => tab.id === 2).active">
-              <h2>Tab 2 content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, animi assumenda blanditiis doloremque,
-                iste maiores molestiae omnis placeat praesentium provident quam quos suscipit tempora tenetur totam,
-                veniam vitae? Id, quaerat?</p>
+            <section class="flex p-8 space-y-2 gap-x-8" x-show="tabs.find(tab => tab.id === 2).active">
+              <div class="hidden w-2/5 lg:block">
+                <div class="relative p-2">
+                  <h3 class="absolute px-4 text-3xl font-bold text-white bottom-4">瞬間彩色日拋系列無論你是自信率性、優雅迷人或清新閃耀，都能綻放自信光彩</h3>
+                  <img src="./assets/img/demo-hot-sale-tab2.jpg" alt="" class="object-contain w-full shadow-xl rounded-xl">
+                </div>
+              </div>
+              <div class="grid w-full grid-cols-2 gap-4 lg:w-3/5">
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+               
+                
+              </div>
             </section>
 
             <!-- Tab 3 content -->
-            <section class="p-2 space-y-4" x-show="tabs.find(tab => tab.id === 3).active">
-              <h2>Tab 3 content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad, alias eius est hic impedit inventore
-                magni minima nulla numquam odit pariatur quidem tenetur. Alias consectetur corporis perspiciatis
-                repudiandae tempora.</p>
+            <section class="flex p-8 space-y-2 gap-x-8" x-show="tabs.find(tab => tab.id === 3).active">
+              <div class="hidden w-2/5 lg:block">
+                <div class="relative p-2">
+                  <h3 class="absolute px-4 text-3xl font-bold text-white bottom-4">瞬間彩色日拋系列無論你是自信率性、優雅迷人或清新閃耀，都能綻放自信光彩</h3>
+                  <img src="./assets/img/demo-hot-sale-tab3.jpg" alt="" class="object-contain w-full shadow-xl rounded-xl">
+                </div>
+              </div>
+              <div class="grid w-full grid-cols-2 gap-4 lg:w-3/5">
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+                <div class="product-item">
+                  <a href="./product.html">
+                    <img
+                      class="mx-auto hover:grow hover:shadow-lg"
+                      src="./assets/img/demo-product-item.jpg"
+                    />
+                    <div class="pt-3">
+                      <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
+                      <p class="text-sm text-gray-700">
+                        Star Shine Daily Disposable Color Contact Lens
+                      </p>
+                    </div>
+                    <p class="pt-3 text-sm text-gray-600">售價</p>
+                    <div class="flex items-center">
+                      <span class="mr-1 text-gray-800">$</span>
+                      <p class="text-2xl text-gray-800">180</p>
+                    </div>
+                  </a>
+                  <button class="text-gray-600 add-to-car">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>                  
+                    </a>
+                  </button>
+                </div>
+               
+                
+              </div>
             </section>
           </div>
         </div>

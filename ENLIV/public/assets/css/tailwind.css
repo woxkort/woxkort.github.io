@@ -248,8 +248,12 @@ nav {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 10px;
+  bottom: 0px;
   margin: auto;
+}
+.owl-theme .owl-dots .owl-dot span{
+  width:5px !important;
+  height:5px !important;
 }
 
 /* Buttons */
