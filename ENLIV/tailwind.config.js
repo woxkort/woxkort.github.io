@@ -236,9 +236,9 @@ module.exports = {
         sans: ['Work Sans','Noto Sans TC','sans-serif',...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        'bg1': "url('../ENLIV/public/assets/img/global/bg-1.jpg')",
-        'bg2': "url('./public/assets/img/global/bg-2.jpg')",
-        'bg3': "url('assets/img/global/bg-3.png')",
+        'bg1': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-1.jpg')",
+        'bg2': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-2.jpg')",
+        'bg3': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-3.png')",
         
       }
       
