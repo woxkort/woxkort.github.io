@@ -514,15 +514,16 @@ input:checked + label {
 }
 
 .shipping__store{
-  @apply relative w-1/3 md:w-full
+  @apply relative w-full
 }
 
 .shipping__store > label{
-  @apply flex flex-col items-center justify-center gap-4 px-4 py-8 border border-gray-100 rounded-lg cursor-pointer md:flex-row    
+  @apply flex items-center justify-center gap-4 px-4 py-8 border border-gray-100 rounded-lg cursor-pointer flex-row    
 }
 .shipping__store > label > .select-check{
   @apply absolute items-center justify-center hidden w-8 h-8 p-1 border-2 rounded-full bg-greenYellow-50 -top-2 -right-2 border-greenYellow-500
 }
+
 
 .store-image{
   width: 2.75rem;

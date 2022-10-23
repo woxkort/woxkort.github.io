@@ -237,7 +237,7 @@ module.exports = {
       },
       backgroundImage: {
         'bg1': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-1.jpg')",
-        'bg2': "url('~/assets/img/global/bg-2.jpg')",
+        'bg2': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-2.jpg')",
         'bg3': "url('https://woxkort.github.io/ENLIV/public/assets/img/global/bg-3.png')",        
       }      
     },
