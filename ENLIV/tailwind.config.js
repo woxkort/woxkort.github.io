@@ -234,12 +234,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Work Sans','Noto Sans TC','sans-serif',...defaultTheme.fontFamily.sans],
-      },
-      backgroundImage: {
-        'bg1': "url('/ENLIV/public/assets/img/global/bg-1.jpg')",
-        'bg2': "url('/ENLIV/public/assets/img/global/bg-2.jpg')",
-        'bg3': "url('/ENLIV/public/assets/img/global/bg-3.png')",        
-      }      
+      },  
     },
   },
   variants: {

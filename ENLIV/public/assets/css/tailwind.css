@@ -53,9 +53,11 @@
 
 @layer components {
   .bg-bg1 {
+    background-image:url("../img/global/bg-1.jpg");
     @apply bg-fixed bg-white bg-auto md:bg-cover;
   }
   .bg-bg3 {
+    background-image:url("../img/global/bg-3.png");
     @apply bg-white bg-auto md:bg-cover bg-fixed;
   }
 }

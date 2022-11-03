@@ -356,28 +356,40 @@
           <div class="flex flex-col md:flex-row">                  
             <p class="py-2 text-gray-500 md:w-1/5 md:pt-3">處方籤</p>                  
             <div class="flex flex-col md:w-4/5">
-              <div class="py-6 border-2 border-gray-100 border-dashed rounded-md">
+              <!-- 未上傳 -->
+              <!-- <div class="py-6 border-2 border-gray-100 border-dashed rounded-md">
                 <label for="file-upload" class="items-center justify-center mx-auto space-y-2 text-center bg-white cursor-pointer">
                   <svg class="w-8 h-8 mx-auto text-gray-400 "  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />  <polyline points="17 8 12 3 7 8" />  <line x1="12" y1="3" x2="12" y2="15" /></svg>
                   <span class="block">點擊或以拖曳的方式進行檔案上傳</span>
                   <input id="file-upload" name="file-upload" type="file" class="sr-only">
                   <span class="block text-xs text-gray-500">PNG, JPG, GIF</span>
                 </label>                                                                                                               
-              </div>
+              </div>              
               <span class="p-2 form-help-text">
                 驗光資料可於會員註冊完成之後，再⾄會員資料⾴上傳。
-              </span>
-            </div>
+              </span> -->
 
-            
+              <!-- 已上傳 -->                      
+              <div class="p-2 border-2 border-gray-100 border-dashed rounded-md">
+                <img src="https://via.placeholder.com/1200x800"/>
+              </div>
+              <div class="flex items-center justify-end pt-2">
+                <a class="text-gray-600 bg-white cursor-pointer btn-with-icon btn-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                  </svg>                          
+                  <span class="pl-2">重新上傳</span>
+                </a>
+              </div>
+
+            </div>
           </div>
-        
         </form>       
       </section>
     </div>
 
     <!-- Action -->   
-    <section class="flex flex-col items-end gap-4 pt-6 mt-10 md:gap-6">      
+    <section class="flex flex-col items-end gap-4 pt-5 mt-10 border-t border-gray-100 md:gap-6">      
       <div class="flex flex-col gap-2 text-sm">
         <p class="mb-2 text-sm text-gray-600">本⼈確認已⾄ ENLIV 特約⾨市檢視過各種隱形眼鏡產品，已了解及熟悉隱形眼鏡使⽤⽅法並充分了解使⽤隱形眼鏡之注意事項。本⼈與 ENLIV 就處⽅籤訂立配送契約，在該處⽅的有效期限內， 透過ENLIV 官網配送符合提供處⽅籤規格之產品，若處⽅異動超過有效期限，需重新⾄特約⾨市確認處⽅，⽅可繼續使⽤ENLIV 官網通知履約及預約配送。</p>
         <label class="flex items-center">
