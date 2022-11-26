@@ -53,11 +53,11 @@
 
 @layer components {
   .bg-bg1 {
-    background-image:url("../img/global/bg-1.jpg");
+    background-image: url('../img/global/bg-1.jpg');
     @apply bg-fixed bg-white bg-auto md:bg-cover;
   }
   .bg-bg3 {
-    background-image:url("../img/global/bg-3.png");
+    background-image: url('../img/global/bg-3.png');
     @apply bg-white bg-auto md:bg-cover bg-fixed;
   }
 }
@@ -68,17 +68,16 @@
 
 /* form */
 
-.form-group{
-  @apply flex flex-col md:flex-row
+.form-group {
+  @apply flex flex-col md:flex-row;
 }
 
-.form-group > label{
-  @apply py-2 text-gray-500 md:w-1/5
+.form-group > label {
+  @apply py-2 text-gray-500 md:w-1/5;
 }
-.form-field{
-  @apply flex flex-col md:w-4/5
+.form-field {
+  @apply flex flex-col md:w-4/5;
 }
-
 
 .form-input {
   @apply w-full py-3 pl-4 pr-5 font-medium leading-none text-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-greenYellow-600 focus:border-greenYellow-500  focus:ring-opacity-50;
@@ -96,7 +95,7 @@
 }
 
 .form-help-text {
-  @apply text-sm text-gray-500 p-2 ;
+  @apply text-sm text-gray-500 p-2;
 }
 
 /* form error */
@@ -152,12 +151,12 @@
 }
 
 .main-container-no-background {
-  @apply  py-12 pb-20 px-8 md:px-14 xl:px-20 container mx-auto max-w-7xl  mb-16;
+  @apply py-12 pb-20 px-8 md:px-14 xl:px-20 container mx-auto max-w-7xl  mb-16;
 }
 
 /* navbar */
 
-.nav-badge{
+.nav-badge {
   @apply flex items-center justify-center w-5 h-5 p-2 m-auto text-sm rounded-full text-greenYellow-800 bg-greenYellow-500 bg-opacity-80;
   margin-top: -1px;
   margin-left: -10px;
@@ -179,9 +178,9 @@ nav {
   transition: all 200ms linear;
 }
 .nav__menu__mobile {
-  @apply px-5 py-5 space-y-3 shadow text-center absolute w-2/3 top-0; 
+  @apply px-5 py-5 space-y-3 shadow text-center absolute w-2/3 top-0;
   height: 100vh;
-  background-color: rgb(190 198 127 / .8);
+  background-color: rgb(190 198 127 / 0.8);
   transition: background-color 200ms linear;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -190,13 +189,12 @@ nav {
   padding-top: 80px;
 }
 
-.nav__menu__mobile a{
-  @apply block px-3 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-greenYellow-100
+.nav__menu__mobile a {
+  @apply block px-3 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-greenYellow-100;
 }
 
-.nav__menu__mobile a.current{
-  @apply bg-greenYellow-100
-
+.nav__menu__mobile a.current {
+  @apply bg-greenYellow-100;
 }
 
 .nav__links {
@@ -253,9 +251,9 @@ nav {
   bottom: 0px;
   margin: auto;
 }
-.owl-theme .owl-dots .owl-dot span{
-  width:5px !important;
-  height:5px !important;
+.owl-theme .owl-dots .owl-dot span {
+  width: 5px !important;
+  height: 5px !important;
 }
 
 /* Buttons */
@@ -296,6 +294,17 @@ nav {
   }
 }
 
+.btn-color-orange:disabled{
+  @apply opacity-50 cursor-not-allowed;
+}
+.btn-color-orange:disabled span{
+  display:none;
+}
+.btn-color-orange:disabled:after {
+  content: '缺貨中';
+}
+
+
 /* owl-carousel */
 .owl-carousel a.item:not(.current) {
   width: 100%;
@@ -330,10 +339,28 @@ nav {
   transition: all 0.2s linear;
 }
 
+.product-item-photo {
+  position: relative;
+  aspect-ratio: auto 4 / 3;
+}
+
+.product-item-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 input:checked + label {
   background: #bec67f;
   border: 1px solid #bec67f;
   color: #fff;
+}
+
+input:disabled + label{
+  background: #dedede;
+  border: 1px solid #e3e3e3;
+  color: #989898;
+  cursor: not-allowed;
 }
 
 .add-to-car {
@@ -503,7 +530,6 @@ input:checked + label {
   }
 }
 
-
 /* Cart__shipping */
 
 .shipping form input:checked + label {
@@ -515,38 +541,33 @@ input:checked + label {
   display: flex;
 }
 
-.shipping__store{
-  @apply relative w-full
+.shipping__store {
+  @apply relative w-full;
 }
 
-.shipping__store > label{
-  @apply flex items-center justify-center gap-4 px-4 py-8 border border-gray-100 rounded-lg cursor-pointer flex-row    
+.shipping__store > label {
+  @apply flex items-center justify-center gap-4 px-4 py-8 border border-gray-100 rounded-lg cursor-pointer flex-row;
 }
-.shipping__store > label > .select-check{
-  @apply absolute items-center justify-center hidden w-8 h-8 p-1 border-2 rounded-full bg-greenYellow-50 -top-2 -right-2 border-greenYellow-500
+.shipping__store > label > .select-check {
+  @apply absolute items-center justify-center hidden w-8 h-8 p-1 border-2 rounded-full bg-greenYellow-50 -top-2 -right-2 border-greenYellow-500;
 }
 
-
-.store-image{
+.store-image {
   width: 2.75rem;
   height: 2.75rem;
 }
 
-.store-content{
-  @apply text-base text-center
+.store-content {
+  @apply text-base text-center;
 }
 
-.store-content__name{
-  @apply text-sm text-gray-700 md:text-base
+.store-content__name {
+  @apply text-sm text-gray-700 md:text-base;
 }
 
-.store-content__text{
-  @apply text-sm text-gray-500
+.store-content__text {
+  @apply text-sm text-gray-500;
 }
-
-
-
-
 
 /* page__news */
 .news-items {
@@ -579,37 +600,58 @@ input:checked + label {
 
 /* pagination */
 
-.pagination{
-  @apply mx-auto max-w-7xl py-8 pb-20
+.pagination {
+  @apply mx-auto max-w-7xl py-8 pb-20;
 }
 
-.pagination ul{
-  @apply flex items-center justify-center gap-4
+.pagination ul {
+  @apply flex items-center justify-center gap-4;
 }
 
 .page-link {
-  transition: all .1s;
-	@apply flex items-center justify-center w-10 h-10 bg-white bg-opacity-50 rounded-full hover:bg-greenYellow-100 cursor-pointer
+  transition: all 0.1s;
+  @apply flex items-center justify-center w-10 h-10 bg-white bg-opacity-50 rounded-full hover:bg-greenYellow-100 cursor-pointer;
 }
 
-.page-link.active{
-  @apply bg-greenYellow-300 text-white
+.page-link.active {
+  @apply bg-greenYellow-300 text-white;
 }
 
-.page-prev, .page-back{
+.page-prev,
+.page-back {
   @apply page-link;
   background: transparent !important;
 }
 
-.page-prev:hover, .page-back:hover{
-  border: 1px solid #BEC67F;
+.page-prev:hover,
+.page-back:hover {
+  border: 1px solid #bec67f;
 }
 
 /* footer */
-footer{
-  @apply bg-white border-t border-gray-100
+footer {
+  @apply bg-white border-t border-gray-100;
 }
 
-.footer-wrapper{
-  @apply container px-6 py-8 mx-auto max-w-7xl 
+.footer-wrapper {
+  @apply container px-6 py-8 mx-auto max-w-7xl;
 }
+
+
+/* select-coupon-option */
+[x-cloak] { display: none }
+
+.disabledOption,.disabledOption:hover,.disabledOption:active{
+  @apply bg-gray-50 text-gray-300 cursor-not-allowed
+}
+
+.hr-double-line{
+  border-top: 1px dashed #c2c2c2;
+  padding-bottom: 8px;
+  margin-top: 8px;
+}
+
+
+
+
+

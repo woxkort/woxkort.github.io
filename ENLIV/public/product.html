@@ -277,12 +277,13 @@
               </div>
               <form class="flex flex-wrap flex-1 w-3/4 gap-2">
                 <div>
+                  <!-- 若該度數無法選取，加上 disabled -->
                   <input
                     class="sr-only peer"
                     id="degree_1"
                     type="radio"
                     name="radio"
-                    checked
+                    disabled
                   />
                   <label
                     class="inline-flex items-center justify-center w-16 py-2 text-gray-500 border border-gray-100 rounded-lg cursor-pointer"
@@ -436,16 +437,17 @@
                 <p class="text-2xl text-gray-800">180</p>
               </div>
             </div>
-            <!-- button -->
+            <!-- button -->            
             <div class="flex gap-3 mt-8">              
               <button                                
                 type="submit"
-                class="p-6 bg-white border border-orange-500 btn-larger">
+                class="p-6 bg-white border border-orange-500 btn-larger btn-disabled">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#B94623" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>                  
               </button>
-              <button onclick="location.href='./cart.html'" class="w-full btn-larger btn-color-orange">立即預約配送</button>
+              <!-- 若缺貨無法銷售，加上 disabled，如下 -->
+              <button onclick="location.href='./cart.html'" class="w-full btn-larger btn-color-orange" disabled><span>立即預約配送</span></button>
             </div>
           </div>
         </div>
@@ -484,10 +486,12 @@
         <div class="owl-carousel owl-theme">
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">
@@ -510,10 +514,12 @@
           </div>
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">
@@ -536,10 +542,12 @@
           </div>
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">
@@ -562,10 +570,12 @@
           </div>
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">
@@ -588,10 +598,12 @@
           </div>
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">
@@ -614,10 +626,12 @@
           </div>
           <div class="product-item">
             <a href="./product.html">
-              <img
-                class="mx-auto hover:grow hover:shadow-lg"
-                src="./assets/img/demo-product-item.jpg"
-              />
+              <div class="product-item-photo">
+                <img
+                  class="mx-auto hover:grow hover:shadow-lg"
+                  src="./assets/img/demo-product-item.jpg"
+                />
+              </div>
               <div class="pt-3">
                 <h4 class="text-lg">星眸彩色日拋隱形眼鏡-心機系列</h4>
                 <p class="text-sm text-gray-700">

@@ -153,8 +153,10 @@
 
   <!--main-->
   <main class="main-container">
+
     <!-- 配送產品 -->
     <h3 class="section-title">商品</h3>
+    <!-- 已選購商品 -->
     <section class="mb-12 border-gray-100 md:px-8 md:border">
       <table class="block w-full whitespace-no-wrap md:py-5">
         <thead>
@@ -301,6 +303,13 @@
           </tr>
         </tbody>
       </table>
+    </section>
+    <!-- 尚未選購商品-->    
+    <section class="px-8 mb-12 border border-gray-100">
+      <div class="flex flex-col items-center justify-center gap-4 p-8">
+        <p class="text-center">您還尚未選購商品</p>
+        <button onclick="location.href='./product-list.html'" class="btn-regular btn-color-orange">前往選購商品</button>
+      </div>
     </section>
 
     <!-- 配送方式 -->
@@ -510,17 +519,20 @@
         <div class="flex flex-col md:flex-row">
           <p class="py-2 text-gray-500 md:w-1/5">點數折抵</p>
           <label class="flex flex-col md:w-4/5">
-            <input class="form-input" placeholder="請輸入欲折扣的點數" />
+            <div class="flex flex-row ">
+              <input class="form-input" placeholder="請輸入欲折扣的點數" />
+              <button class="w-1/4 mx-3 md:w-1/3 btn-regular btn-color-orange">使用</button>
+            </div>
             <span class="p-2 form-help-text"> 可用點數：100 點，本次折抵上限為 30 點。</span>              
-          </label>
+          </label>          
         </div>
 
         <!-- 使用優惠券-->        
         <div class="flex flex-col md:flex-row">
-          <p class="text-gray-500 md:w-1/5">使用優惠券</p>
+          <p class="py-2 text-gray-500 md:py-0 md:w-1/5">使用優惠券</p>
           <div class="flex flex-col md:w-4/5" x-data="{couponValue: null}">            
             <div class="flex flex-row gap-x-6 gap-y-1">
-              <label class="" >
+              <label class="flex items-center">
                 <input
                   x-model="couponValue"
                   type="radio"
@@ -530,7 +542,7 @@
                 />
                 <span class="ml-2">選擇優惠券</span>
               </label>
-              <label class="">
+              <label class="flex items-center">
                 <input
                   x-model="couponValue"
                   type="radio"
@@ -542,23 +554,78 @@
               </label>                                                                   
             </div>
             <div class="flex flex-col mt-2">
-              <label for="" x-show="couponValue!='inputCoupon' && couponValue!=null">
-                <select class="form-select" >
-                  <option>選擇優惠碼</option>
-                  <option>優惠碼 1</option>
-                  <option>優惠碼 2</option>
-                  <option>優惠碼 3</option>
-                  <option>優惠碼 4</option>
-                  <option>優惠碼 5</option>
-                  <option>優惠碼 6</option>
-                  <option>優惠碼 7</option>
-                </select>
+              <!-- 選擇優惠券 -->
+              <label for="" x-show="couponValue!='inputCoupon' && couponValue!=null">                 
+                <div x-data="dropdown()" x-init="loadOptions()" class="">
+                  <select x-cloak id="select-coupon-option" class="sr-only">
+                    <option value="1">優惠券 1</option>
+                    <option value="2" disabled>優惠券 2</option>
+                    <option value="3">優惠券 3</option>
+                    <option value="4">優惠券 4</option>
+                    <option value="5">優惠券 5</option>
+                    <option value="6" disabled>優惠券 6</option>
+                    <option value="7">優惠券 7</option>
+                    <option value="8">優惠券 8</option>
+                  </select>
+                  <input name="values" type="hidden" x-bind:value="selectedValues()">
+                  <div class="relative flex flex-col items-center">
+                    <div x-on:click="open" class="w-full">
+                      <div class="flex p-1 pr-3 bg-white border border-gray-100 rounded-md shadow-sm">
+                        <div class="flex flex-wrap flex-auto">
+                          <template x-for="(option,index) in selected" :key="options[option].value" >
+                            <div disabled class="flex items-center justify-center p-2 py-2 m-1 text-gray-600 border rounded-lg border-greenYellow-200 bg-greenYellow-50">
+                              <div class="font-normal leading-none max-w-full flex-initial x-model="options[option] x-text="options[option].text"></div>
+                              <div class="flex flex-row-reverse flex-auto pl-2 cursor-pointer">
+                                <div x-on:click.stop="remove(index,option)">
+                                  <svg class="w-4 h-4 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>              
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                          <div x-show="selected.length == 0" class="flex-1">
+                            <input placeholder="選擇優惠碼" class="w-full p-1 px-2 text-gray-800 bg-transparent border-white outline-none appearance-none" x-bind:value="selectedValues()">
+                          </div>
+                        </div>
+                        <div class="flex items-center w-8 py-1 pl-2 pr-1 text-gray-300">      
+                          <button type="button" x-show="isOpen() === true" x-on:click="open" class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
+                            <svg class="w-6 h-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="6 9 12 15 18 9" /></svg>              
+                          </button>
+                          <button type="button" x-show="isOpen() === false" @click="close" class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
+                            <svg class="w-6 h-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="6 15 12 9 18 15" /></svg>              
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full px-4">
+                      <div x-show.transition.origin.top="isOpen()" class="absolute left-0 z-40 w-full bg-white rounded shadow-lg top-100 max-h-select" x-on:click.away="close">
+                        <div class="flex flex-col w-full h-64 overflow-y-auto">
+                          <template x-for="(option,index) in options" :key="option" class="overflow-auto" >
+                            <div class="w-full border-b rounded-t cursor-pointer border-gray-50 hover:bg-greenYellow-100" @click="select(index,$event)" :class="option.disabled === true? 'disabledOption':'' " >
+                              <div class="relative flex items-center w-full p-2 py-3 pl-2 border-l-2 border-transparent" >
+                                <div class="flex items-center w-full">
+                                  <div x-show="option.selected">
+                                    <svg class="w-4 h-4 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 12l5 5l10 -10" /></svg>
+                                  </div>
+                                  <div class="mx-2" x-model="option" x-text="option.text"></div>                                  
+                                </div>
+                              </div>
+                            </div>                            
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </label>           
+              <!-- 輸入優惠券 -->
               <label for="" x-show="couponValue!='selectCoupon' && couponValue!=null">
-                <input
+                <div class="flex">
+                  <input
                     class="flex-full form-input"
                     placeholder="請輸入優惠碼"
                   />
+                  <button class="w-1/4 mx-3 md:w-1/3 btn-regular btn-color-orange">使用</button>
+                </div>                
               </label> 
             </div>                                                                                                   
           </div>
@@ -621,6 +688,11 @@
             <div class="flex justify-between">              
               <h5 class="text-base">運費</h5>
               <p class="text-right">免運</p>            
+            </div>
+            <hr class="hr-double-line">
+            <div class="flex justify-between">              
+              <h5 class="text-base">總金額</h5>
+              <p class="text-right">NT$1560</p>            
             </div>
           </div>
         </div>          
@@ -754,6 +826,53 @@
           },
         },
       })
+  </script>
+  <!-- 選擇優惠券 -->
+  <script>
+    function dropdown() {
+      return {
+          options: [],
+          selected: [],
+          show: false,
+          open() { this.show = true },
+          close() { this.show = false },
+          isOpen() { return this.show === true },
+          select(index, event) {
+            if (!this.options[index].disabled) {
+              if (!this.options[index].selected) {
+
+                  this.options[index].selected = true;
+                  this.options[index].element = event.target;
+                  this.selected.push(index);
+
+              } else {
+                  this.selected.splice(this.selected.lastIndexOf(index), 1);
+                  this.options[index].selected = false
+              }
+            }
+          },
+          remove(index, option) {
+              this.options[option].selected = false;
+              this.selected.splice(index, 1);
+          },
+          loadOptions() {
+              const options = document.getElementById('select-coupon-option').options;
+              for (let i = 0; i < options.length; i++) {
+                  this.options.push({
+                      value: options[i].value,
+                      text: options[i].innerText,
+                      disabled: options[i].disabled,
+                      selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
+                  });
+              }
+          },
+          selectedValues(){
+              return this.selected.map((option)=>{
+                  return this.options[option].value;
+              })
+          }
+      }
+  }
   </script>
   <script src="./assets/js/style.js"></script>
 </body>
