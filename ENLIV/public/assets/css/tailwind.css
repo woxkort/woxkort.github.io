@@ -300,8 +300,11 @@ nav {
 .btn-color-orange:disabled span{
   display:none;
 }
-.btn-color-orange:disabled:after {
+.btn-color-orange.oos:disabled:after {
   content: '缺貨中';
+}
+.btn-color-orange.sending:disabled:after {
+  content: '送出配送中';
 }
 
 
