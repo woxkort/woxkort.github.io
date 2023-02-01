@@ -432,50 +432,55 @@
           <div class="form-group">
             <label for="">電子發票</label>
             <div class="form-field">
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-2" x-data="{invoiceValue: null}">
                 <div class="flex flex-wrap gap-x-6 gap-y-1">
                   <label class="inline-flex items-center">
                     <input
+                      x-model="invoiceValue"
                       type="radio"
                       class="form-radio"
                       name="invoiceType"
-                      value=""
+                      value="memberCarrier"
                     />
                     <span class="ml-2">會員載具</span>
                   </label>
                   <label class="inline-flex items-center">
                     <input
+                      x-model="invoiceValue"
                       type="radio"
                       class="form-radio"
                       name="invoiceType"
-                      value=""
+                      value="taxId"
                     />
                     <span class="ml-2">公司用 (統編)</span>
                   </label>
                   <label class="inline-flex items-center">
                     <input
+                      x-model="invoiceValue"
                       type="radio"
                       class="form-radio"
                       name="invoiceType"
-                      value=""
+                      value="phoneCarrier"
                     />
                     <span class="ml-2">手機載具</span>
                   </label>
                   <label class="inline-flex items-center">
                     <input
+                      x-model="invoiceValue"
                       type="radio"
                       class="form-radio"
                       name="invoiceType"
-                      value=""
+                      value="ic-card"
                     />
                     <span class="ml-2">自然人憑證</span>
                   </label>
                   <label class="inline-flex items-center">
                     <input
+                      x-model="invoiceValue"
                       type="radio"
                       class="form-radio"
                       name="invoiceType"
-                      value=""
+                      value="donate"
                     />
                     <span class="ml-2">捐贈碼</span>
                   </label>
@@ -488,6 +493,13 @@
                   <input
                     class="flex-full form-input"
                     placeholder="請輸入發票抬頭"
+                  />                  
+                </div>
+                <!-- 公司地址欄位-->
+                <div class="" x-show="invoiceValue =='taxId' && invoiceValue!=null">
+                  <input                    
+                    class="flex-full form-input"
+                    placeholder="請輸入公司地址"
                   />
                 </div>
                 <span class="form-help-text">

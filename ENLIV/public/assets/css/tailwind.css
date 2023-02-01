@@ -76,13 +76,33 @@
   @apply py-2 text-gray-500 md:w-1/5;
 }
 .form-field {
-  @apply flex flex-col md:w-4/5;
+  @apply relative flex flex-col md:w-4/5;
 }
 
 .form-input {
-  @apply w-full py-3 pl-4 pr-5 font-medium leading-none text-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-greenYellow-600 focus:border-greenYellow-500  focus:ring-opacity-50;
+  @apply  w-full py-3 pl-4 pr-5 font-medium leading-none text-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-greenYellow-600 focus:border-greenYellow-500  focus:ring-opacity-50;
   /* @apply focus:border-greenYellow-500 focus:outline-none focus:shadow-outline-greenYellow block w-full text-sm; */
 }
+
+.form-input-static{
+  @apply absolute;
+  right:12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+  font-weight: 500;
+}
+.verify-card{
+  border: 1px solid #efefef;
+    /* padding: 24px 32px; */
+    border-radius: 12px;
+}
+
+.verify-timer{
+  margin-top:8px;
+}
+
 
 .form-select {
   @apply w-full py-3 pl-4 pr-5 font-medium leading-none text-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-greenYellow-600 focus:border-greenYellow-500  focus:ring-opacity-50;
