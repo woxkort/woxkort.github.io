@@ -18,12 +18,13 @@
   <script src="./assets/js/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="./assets/js/init-alpine.js"></script>
-  
+
   <!-- Owl Stylesheets -->
   <link rel="stylesheet" href="./assets/owlcarousel/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="./assets/owlcarousel/assets/owl.theme.default.min.css" />
   <script src="./assets/owlcarousel/owl.carousel.js"></script>
 </head>
+
 <body class="bg-bg1 page__cart">
   <!-- nav  -->
   <nav class="navbar-fixed" x-data="{menu:false}">
@@ -34,17 +35,17 @@
           <button x-on:click="menu = true" x-show="menu ? 'false' : 'true'" type="button"
             class="inline-flex items-center justify-center p-2 text-gray-600 rounded-md hover:bg-greenYellow-500 hover:text-white focus:outline-none"
             aria-controls="mobile-menu" aria-expanded="false">
-            <svg x-bind:class="menu? 'hidden' : 'block'"  class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              aria-hidden="true">
+            <svg x-bind:class="menu? 'hidden' : 'block'" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-            <svg x-bind:class="menu? 'block' : 'hidden'" class="block w-6 h-6 " fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              aria-hidden="true">
+            <svg x-bind:class="menu? 'block' : 'hidden'" class="block w-6 h-6 " fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        
+
         <!-- logo -->
         <div class="nav__logo">
           <a href="./index.html">
@@ -72,7 +73,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- links -->
         <div class="nav__links" id="nav-content">
           <!-- 未登入 -->
@@ -85,56 +86,65 @@
               <svg class="w-6 h-6 text-gray-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M20 12h-13l3 -3m0 6l-3 -3" /></svg>            
             </button>                     
           </div> -->
-          
+
           <!-- 已登入 -->
           <div class="relative inline-block" x-data="{open: false}">
-            <a x-on:click="open = true"
-              class="hidden dropdown-menu-item md:block">
+            <a x-on:click="open = true" class="hidden dropdown-menu-item md:block">
               我的帳戶
             </a>
-            
+
             <button x-on:click="open = true" type="button"
               class="p-1 text-gray-600 rounded-full md:hidden focus:outline-none focus:bg-greenYellow-500">
-              <svg class="w-6 h-6 text-gray-700 focus:text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <svg class="w-6 h-6 text-gray-700 focus:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </button>
             <!-- 選單 -->
             <div x-show="open" x-on:click.away="open = false"
-              class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg "
-              role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-              
-              <a href="./account.html" class="flex items-center px-4 py-2 text-base text-gray-700 hover:bg-greenYellow-100" role="menuitem" tabindex="-1"
-                id="user-menu-item-account">
-                <svg class="w-5 h-5 mr-3 text-gray-700"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                </svg>                  
+              class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg " role="menu"
+              aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+
+              <a href="./account.html"
+                class="flex items-center px-4 py-2 text-base text-gray-700 hover:bg-greenYellow-100" role="menuitem"
+                tabindex="-1" id="user-menu-item-account">
+                <svg class="w-5 h-5 mr-3 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
                 基本資料
-              </a>                              
-                          
+              </a>
+
               <a href="#" class="flex items-center px-4 py-2 text-base text-gray-700 hover:bg-greenYellow-100"
                 id="user-menu-item-out">
-                <svg class="w-5 h-5 mr-3 text-gray-700"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                <svg class="w-5 h-5 mr-3 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                 </svg>
                 登出
               </a>
 
             </div>
           </div>
-          
+
           <!-- 購物車-->
           <div class="relative inline-block">
             <button onclick="location.href='./cart.html'" type="button"
               class="p-1 text-gray-600 rounded-full md:hidden focus:outline-none focus:bg-greenYellow-500">
-              <svg class="w-6 h-6 text-gray-700"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />  <line x1="3" y1="6" x2="21" y2="6" />  <path d="M16 10a4 4 0 0 1-8 0" /></svg>
-              <span class="absolute right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 rounded-full top-1 text-greenYellow-50 bg-greenYellow-800">2</span>
+              <svg class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              <span
+                class="absolute right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 rounded-full top-1 text-greenYellow-50 bg-greenYellow-800">2</span>
             </button>
-            <a href="./cart.html"
-              class="hidden dropdown-menu-item md:block ">
+            <a href="./cart.html" class="hidden dropdown-menu-item md:block ">
               <span class="leading-none">購物車</span>
-              <span class="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none rounded-full text-greenYellow-50 bg-greenYellow-800">2</span>
-            </a>                         
+              <span
+                class="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none rounded-full text-greenYellow-50 bg-greenYellow-800">2</span>
+            </a>
           </div>
 
 
@@ -145,7 +155,7 @@
     <div x-show="menu" x-on:click.away="menu = false" class="md:hidden" id="mobile-menu">
       <div class="nav__menu__mobile">
         <a href="./product-list.html" class="current">商品列表</a>
-        <a href="./news.html" >最新消息</a>
+        <a href="./news.html">最新消息</a>
         <a href="./shops.html">實體通路</a>
       </div>
     </div>
@@ -160,9 +170,7 @@
     <section class="mb-12 border-gray-100 md:px-8 md:border">
       <table class="block w-full whitespace-no-wrap md:py-5">
         <thead>
-          <tr
-            class="hidden text-sm text-left text-gray-500 border-b border-gray-100 md:table-row"
-          >
+          <tr class="hidden text-sm text-left text-gray-500 border-b border-gray-100 md:table-row">
             <th class="w-1/12 px-4 py-3">品項</th>
             <th class="w-4/12 px-4 py-3"></th>
             <th class="px-4 py-3">單價</th>
@@ -174,28 +182,19 @@
         <tbody class="md:divide-y md:divide-gray-100 md:divide-dashed">
           <!-- 商品 -->
           <tr
-            class="grid grid-cols-6 p-1 my-4 bg-white border border-gray-100 grid-row-4 md:table-row rounded-xl md:border-0"
-          >
+            class="grid grid-cols-6 p-1 my-4 bg-white border border-gray-100 grid-row-4 md:table-row rounded-xl md:border-0">
             <td class="flex col-span-2 row-span-3 px-2 py-2 md:border-0">
-              <div
-                class="relative flex justify-center w-full md:w-28 md:mr-3"
-              >
-                <img
-                class="object-contain w-full h-auto p-2 border border-gray-100 rounded-md md:border-0"
-                  src="./assets/img/demo-product-item.jpg"
-                  alt=""
-                  loading="lazy"
-                />
+              <div class="relative flex justify-center w-full md:w-28 md:mr-3">
+                <img class="object-contain w-full h-auto p-2 border border-gray-100 rounded-md md:border-0"
+                  src="./assets/img/demo-product-item.jpg" alt="" loading="lazy" />
               </div>
             </td>
             <td class="col-span-4 row-span-2 px-2 py-3">
               <p class="mb-1 text-base">星眸彩色日拋隱形眼鏡-心機系列</p>
               <p class="text-sm text-gray-600">度數 6.00</p>
             </td>
-            <td
-              class="flex items-center col-span-2 px-2 py-3 md:table-cell"
-            >
-            NT$ 580
+            <td class="flex items-center col-span-2 px-2 py-3 md:table-cell">
+              NT$ 580
             </td>
             <td class="col-span-2 col-start-5 px-2 py-3">
               <select class="block w-full mt-1 text-sm form-select">
@@ -206,61 +205,41 @@
                 <option>5</option>
               </select>
             </td>
-            <td
-              class="flex items-center justify-end col-span-3 col-end-7 px-2 py-3 md:table-cell"
-            >
+            <td class="flex items-center justify-end col-span-3 col-end-7 px-2 py-3 md:table-cell">
               <span class="mr-2 md:hidden">小計</span>
               NT$ 1160
             </td>
             <td
-              class="flex flex-row items-center justify-start col-span-2 col-start-1 row-start-4 px-2 py-3 md:table-cell"
-            >
+              class="flex flex-row items-center justify-start col-span-2 col-start-1 row-start-4 px-2 py-3 md:table-cell">
               <button
                 class="flex items-center px-2 py-2 text-sm text-gray-500 rounded-lg focus:outline-none focus:shadow-outline-gray"
-                aria-label="Delete"
-              >
-                <svg
-                  class="w-4 h-4 mr-2 text-gray-700 md:w-5 md:h-5 md:mr-0"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                aria-label="Delete">
+                <svg class="w-4 h-4 mr-2 text-gray-700 md:w-5 md:h-5 md:mr-0" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
-                  
+
                 </svg>
-                <span class="md:hidden">刪除</span> 
+                <span class="md:hidden">刪除</span>
               </button>
             </td>
           </tr>
-          
+
           <!-- 商品 -->
           <tr
-            class="grid grid-cols-6 p-1 my-4 bg-white border border-gray-100 grid-row-4 md:table-row rounded-xl md:border-0"
-          >
+            class="grid grid-cols-6 p-1 my-4 bg-white border border-gray-100 grid-row-4 md:table-row rounded-xl md:border-0">
             <td class="flex col-span-2 row-span-3 px-2 py-2 md:border-0">
-              <div
-                class="relative flex justify-center w-full md:w-28 md:mr-3"
-              >
-                <img
-                class="object-contain w-full h-auto p-2 border border-gray-100 rounded-md md:border-0"
-                  src="./assets/img/demo-product-item.jpg"
-                  alt=""
-                  loading="lazy"
-                />
+              <div class="relative flex justify-center w-full md:w-28 md:mr-3">
+                <img class="object-contain w-full h-auto p-2 border border-gray-100 rounded-md md:border-0"
+                  src="./assets/img/demo-product-item.jpg" alt="" loading="lazy" />
               </div>
             </td>
             <td class="col-span-4 row-span-2 px-2 py-3">
               <p class="mb-1 text-base">星眸彩色日拋隱形眼鏡-心機系列</p>
               <p class="text-sm text-gray-600">度數 6.00</p>
             </td>
-            <td
-              class="flex items-center col-span-2 px-2 py-3 md:table-cell"
-            >
-            NT$ 580
+            <td class="flex items-center col-span-2 px-2 py-3 md:table-cell">
+              NT$ 580
             </td>
             <td class="col-span-2 col-start-5 px-2 py-3">
               <select class="block w-full mt-1 text-sm form-select">
@@ -271,40 +250,29 @@
                 <option>5</option>
               </select>
             </td>
-            <td
-              class="flex items-center justify-end col-span-3 col-end-7 px-2 py-3 md:table-cell"
-            >
+            <td class="flex items-center justify-end col-span-3 col-end-7 px-2 py-3 md:table-cell">
               <span class="mr-2 md:hidden">小計</span>
               NT$ 1160
             </td>
             <td
-              class="flex flex-row items-center justify-start col-span-2 col-start-1 row-start-4 px-2 py-3 md:table-cell"
-            >
+              class="flex flex-row items-center justify-start col-span-2 col-start-1 row-start-4 px-2 py-3 md:table-cell">
               <button
                 class="flex items-center px-2 py-2 text-sm text-gray-500 rounded-lg focus:outline-none focus:shadow-outline-gray"
-                aria-label="Delete"
-              >
-                <svg
-                  class="w-4 h-4 mr-2 text-gray-700 md:w-5 md:h-5 md:mr-0"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                aria-label="Delete">
+                <svg class="w-4 h-4 mr-2 text-gray-700 md:w-5 md:h-5 md:mr-0" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
-                  
+
                 </svg>
-                <span class="md:hidden">刪除</span> 
+                <span class="md:hidden">刪除</span>
               </button>
             </td>
           </tr>
         </tbody>
       </table>
     </section>
-    <!-- 尚未選購商品-->    
+    <!-- 尚未選購商品-->
     <section class="px-8 mb-12 border border-gray-100">
       <div class="flex flex-col items-center justify-center gap-4 p-8">
         <p class="text-center">您還尚未選購商品</p>
@@ -313,97 +281,113 @@
     </section>
 
     <!-- 配送方式 -->
-    <h3 class="section-title">配送方式</h3>    
-    <section class="flex flex-col gap-6 mb-12 border border-gray-100 md:py-5 md:px-8 md:flex-row shipping" >
+    <h3 class="section-title">配送方式</h3>
+    <section class="flex flex-col gap-6 mb-12 border border-gray-100 md:py-5 md:px-8 md:flex-row shipping" x-data="{storeValue:null}">
       <!-- 送貨方式 -->
       <div class="w-full md:w-1/3">
         <h4 class="p-3 px-5 topic bg-gray-50">選擇送貨方式</h4>
         <form class="flex flex-col justify-center w-full gap-4 p-6">
           <div class="shipping__store">
-            <input
-              class="hidden"
-              id="radio_711"
-              type="radio"
-              name="radio"
-              checked
-            />            
+            <input x-model="storeValue" class="hidden" id="radio_711" type="radio" name="storeType" value="CS-711"  />
             <label for="radio_711">
               <div class="store-image">
-                <img src="./assets/img/icon-store-711.svg" alt=""/>
+                <img src="./assets/img/icon-store-711.svg" alt="" />
               </div>
               <div class="store-content">
                 <p class="store-content__name">7-11</p>
                 <p class="store-content__text">貨到付款</p>
               </div>
               <span class="select-check">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-greenYellow-800">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                  class="w-5 h-5 text-greenYellow-800">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </span>
             </label>
           </div>
           <div class="shipping__store">
-            <input
-              class="hidden"
-              id="radio_family"
-              type="radio"
-              name="radio"
-              
-            />
+            <input x-model="storeValue" class="hidden" id="radio_family" type="radio" name="storeType" value="CS-family"/>
             <label for="radio_family">
               <div class="store-image">
-                <img                 
-                  src="./assets/img/icon-store-family.svg"
-                  alt=""
-                />
+                <img src="./assets/img/icon-store-family.svg" alt="" />
               </div>
               <div class="store-content">
                 <p class="store-content__name">全家</p>
                 <p class="store-content__text">貨到付款</p>
               </div>
               <span class="select-check">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-greenYellow-800">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                  class="w-5 h-5 text-greenYellow-800">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </span>
             </label>
           </div>
           <div class="shipping__store">
-            <input
-              class="hidden"
-              id="radio_agency"
-              type="radio"
-              name="radio"              
-            />
+            <input x-model="storeValue" class="hidden" id="radio_agency" type="radio" name="storeType" value="FS"/>
             <label for="radio_agency">
               <div class="store-image">
-                <img                
-                  src="./assets/img/icon-store-agency.svg"
-                  alt=""
-                />
+                <img src="./assets/img/icon-store-agency.svg" alt="" />
               </div>
               <div class="store-content">
                 <p class="store-content__name">特約眼鏡行</p>
                 <p class="store-content__text">貨到付款</p>
               </div>
               <span class="select-check">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-greenYellow-800">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                  class="w-5 h-5 text-greenYellow-800">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </span>
             </label>
           </div>
         </form>
       </div>
-
+      
       <!-- 送貨資料 -->
-      <div class="w-full md:w-2/3">
+      <div class="w-full md:w-2/3" >
         <h4 class="p-3 px-5 topic bg-gray-50">送貨資料</h4>
         <form class="flex flex-col gap-4 p-6">
           <!-- 選擇門市 -->
-          <div class="form-group">
+          <div class="form-group" x-show="storeValue!='FS'">
             <label>選擇門市</label>
             <button class="text-gray-600 bg-white border border-gray-100 btn-regular">選擇取貨門市</button>
+          </div>
+
+          <!-- 選擇特約眼鏡行 -->
+          <div class="form-group" x-show="storeValue =='FS'&& storeValue!=null">
+            <label>選擇特約店家</label>
+            <div class="form-field">
+              <div class="flex flex-col gap-2 sm:gap-4 sm:flex-row">
+                <select class="form-select">
+                  <option>全部縣市</option>
+                  <option>台北市</option>
+                  <option>新北市</option>
+                  <option>桃園市</option>
+                </select>
+                <select class="form-select">
+                  <option>不分區域</option>
+                  <option>台北市</option>
+                  <option>新北市</option>
+                  <option>桃園市</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-1 mt-2">
+                <select class="form-select">
+                  <option>選擇店家</option>
+                  <option>祐成眼鏡行 - 台北市萬華區環河南路二段228號</option>
+                  <option>寶島眼鏡 - 新竹市環河南路二段228號</option>
+                  <option>祐成眼鏡行 - 台北市萬華區環河南路二段228號</option>
+                  <option>寶島眼鏡 - 新竹市環河南路二段228號</option>
+                </select>
+              </div>
+            </div>
           </div>
 
           <!-- 收件人姓名 -->
@@ -435,72 +419,35 @@
               <div class="flex flex-col gap-2" x-data="{invoiceValue: null}">
                 <div class="flex flex-wrap gap-x-6 gap-y-1">
                   <label class="inline-flex items-center">
-                    <input
-                      x-model="invoiceValue"
-                      type="radio"
-                      class="form-radio"
-                      name="invoiceType"
-                      value="memberCarrier"
-                    />
+                    <input x-model="invoiceValue" type="radio" class="form-radio" name="invoiceType"
+                      value="memberCarrier" />
                     <span class="ml-2">會員載具</span>
                   </label>
                   <label class="inline-flex items-center">
-                    <input
-                      x-model="invoiceValue"
-                      type="radio"
-                      class="form-radio"
-                      name="invoiceType"
-                      value="taxId"
-                    />
+                    <input x-model="invoiceValue" type="radio" class="form-radio" name="invoiceType" value="taxId" />
                     <span class="ml-2">公司用 (統編)</span>
                   </label>
                   <label class="inline-flex items-center">
-                    <input
-                      x-model="invoiceValue"
-                      type="radio"
-                      class="form-radio"
-                      name="invoiceType"
-                      value="phoneCarrier"
-                    />
+                    <input x-model="invoiceValue" type="radio" class="form-radio" name="invoiceType"
+                      value="phoneCarrier" />
                     <span class="ml-2">手機載具</span>
                   </label>
                   <label class="inline-flex items-center">
-                    <input
-                      x-model="invoiceValue"
-                      type="radio"
-                      class="form-radio"
-                      name="invoiceType"
-                      value="ic-card"
-                    />
+                    <input x-model="invoiceValue" type="radio" class="form-radio" name="invoiceType" value="ic-card" />
                     <span class="ml-2">自然人憑證</span>
                   </label>
                   <label class="inline-flex items-center">
-                    <input
-                      x-model="invoiceValue"
-                      type="radio"
-                      class="form-radio"
-                      name="invoiceType"
-                      value="donate"
-                    />
+                    <input x-model="invoiceValue" type="radio" class="form-radio" name="invoiceType" value="donate" />
                     <span class="ml-2">捐贈碼</span>
                   </label>
                 </div>
                 <div class="flex flex-col gap-2 sm:gap-4 sm:flex-row">
-                  <input
-                    class="flex-full form-input"
-                    placeholder="請輸入統一編號"
-                  />
-                  <input
-                    class="flex-full form-input"
-                    placeholder="請輸入發票抬頭"
-                  />                  
+                  <input class="flex-full form-input" placeholder="請輸入統一編號" />
+                  <input class="flex-full form-input" placeholder="請輸入發票抬頭" />
                 </div>
                 <!-- 公司地址欄位-->
                 <div class="" x-show="invoiceValue =='taxId' && invoiceValue!=null">
-                  <input                    
-                    class="flex-full form-input"
-                    placeholder="請輸入公司地址"
-                  />
+                  <input class="flex-full form-input" placeholder="請輸入公司地址" />
                 </div>
                 <span class="form-help-text">
                   依統一發票使用辦法規定：公司戶發票一經開立，無法更改為個人發票。請務必確認輸入之公司統編是否正確，一經開立不得要求更改。
@@ -518,7 +465,7 @@
     <h3 class="section-title">會員資訊</h3>
     <section class="px-8 mb-12 border border-gray-100">
       <div class="flex flex-col items-center justify-center gap-4 p-8">
-        <p class="text-center">已經是會員？<br/><span class="text-sm text-gray-400">登入後更方便管理訂單</span></p>
+        <p class="text-center">已經是會員？<br /><span class="text-sm text-gray-400">登入後更方便管理訂單</span></p>
         <button class="btn-regular btn-color-orange">會員登入</button>
       </div>
     </section>
@@ -526,7 +473,7 @@
     <!-- 會員資訊__已登入-->
     <h3 class="section-title">會員資訊 <span class="pl-4 text-sm">已登入 (mrto****@gmail.com)</span></h3>
     <section class="flex flex-col gap-6 mb-12 border border-gray-100">
-      <form class="flex flex-col gap-4 p-6 md:w-1/2">        
+      <form class="flex flex-col gap-4 p-6 md:w-1/2">
         <!-- 點數折抵 -->
         <div class="flex flex-col md:flex-row">
           <p class="py-2 text-gray-500 md:w-1/5">點數折抵</p>
@@ -535,39 +482,27 @@
               <input class="form-input" placeholder="請輸入欲折扣的點數" />
               <button class="w-1/4 mx-3 md:w-1/3 btn-regular btn-color-orange">使用</button>
             </div>
-            <span class="p-2 form-help-text"> 可用點數：100 點，本次折抵上限為 30 點。</span>              
-          </label>          
+            <span class="p-2 form-help-text"> 可用點數：100 點，本次折抵上限為 30 點。</span>
+          </label>
         </div>
 
-        <!-- 使用優惠券-->        
+        <!-- 使用優惠券-->
         <div class="flex flex-col md:flex-row">
           <p class="py-2 text-gray-500 md:py-0 md:w-1/5">使用優惠券</p>
-          <div class="flex flex-col md:w-4/5" x-data="{couponValue: null}">            
+          <div class="flex flex-col md:w-4/5" x-data="{couponValue: null}">
             <div class="flex flex-row gap-x-6 gap-y-1">
               <label class="flex items-center">
-                <input
-                  x-model="couponValue"
-                  type="radio"
-                  class="form-radio"
-                  name="coupon"
-                  value="selectCoupon"                                    
-                />
+                <input x-model="couponValue" type="radio" class="form-radio" name="coupon" value="selectCoupon" />
                 <span class="ml-2">選擇優惠券</span>
               </label>
               <label class="flex items-center">
-                <input
-                  x-model="couponValue"
-                  type="radio"
-                  class="form-radio"
-                  name="coupon"
-                  value="inputCoupon"                  
-                />
+                <input x-model="couponValue" type="radio" class="form-radio" name="coupon" value="inputCoupon" />
                 <span class="ml-2">輸入優惠券</span>
-              </label>                                                                   
+              </label>
             </div>
             <div class="flex flex-col mt-2">
               <!-- 選擇優惠券 -->
-              <label for="" x-show="couponValue!='inputCoupon' && couponValue!=null">                 
+              <label for="" x-show="couponValue!='inputCoupon' && couponValue!=null">
                 <div x-data="dropdown()" x-init="loadOptions()" class="">
                   <select x-cloak id="select-coupon-option" class="sr-only">
                     <option value="1">優惠券 1</option>
@@ -584,78 +519,107 @@
                     <div x-on:click="open" class="w-full">
                       <div class="flex p-1 pr-3 bg-white border border-gray-100 rounded-md shadow-sm">
                         <div class="flex flex-wrap flex-auto">
-                          <template x-for="(option,index) in selected" :key="options[option].value" >
-                            <div disabled class="flex items-center justify-center p-2 py-2 m-1 text-gray-600 border rounded-lg border-greenYellow-200 bg-greenYellow-50">
-                              <div class="font-normal leading-none max-w-full flex-initial x-model="options[option] x-text="options[option].text"></div>
+                          <template x-for="(option,index) in selected" :key="options[option].value">
+                            <div disabled
+                              class="flex items-center justify-center p-2 py-2 m-1 text-gray-600 border rounded-lg border-greenYellow-200 bg-greenYellow-50">
+                              <div class="font-normal leading-none max-w-full flex-initial x-model=" options[option]
+                                x-text="options[option].text"></div>
                               <div class="flex flex-row-reverse flex-auto pl-2 cursor-pointer">
                                 <div x-on:click.stop="remove(index,option)">
-                                  <svg class="w-4 h-4 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>              
+                                  <svg class="w-4 h-4 text-red-500" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                  </svg>
                                 </div>
                               </div>
                             </div>
                           </template>
                           <div x-show="selected.length == 0" class="flex-1">
-                            <input placeholder="選擇優惠碼" class="w-full p-1 px-2 text-gray-800 bg-transparent border-white outline-none appearance-none" x-bind:value="selectedValues()">
+                            <input placeholder="選擇優惠碼"
+                              class="w-full p-1 px-2 text-gray-800 bg-transparent border-white outline-none appearance-none"
+                              x-bind:value="selectedValues()">
                           </div>
                         </div>
-                        <div class="flex items-center w-8 py-1 pl-2 pr-1 text-gray-300">      
-                          <button type="button" x-show="isOpen() === true" x-on:click="open" class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
-                            <svg class="w-6 h-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="6 9 12 15 18 9" /></svg>              
+                        <div class="flex items-center w-8 py-1 pl-2 pr-1 text-gray-300">
+                          <button type="button" x-show="isOpen() === true" x-on:click="open"
+                            class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
+                            <svg class="w-6 h-6 text-gray-500" width="24" height="24" viewBox="0 0 24 24"
+                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" />
+                              <polyline points="6 9 12 15 18 9" />
+                            </svg>
                           </button>
-                          <button type="button" x-show="isOpen() === false" @click="close" class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
-                            <svg class="w-6 h-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="6 15 12 9 18 15" /></svg>              
+                          <button type="button" x-show="isOpen() === false" @click="close"
+                            class="w-6 h-6 text-gray-600 outline-none cursor-pointer focus:outline-none">
+                            <svg class="w-6 h-6 text-gray-500" width="24" height="24" viewBox="0 0 24 24"
+                              stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" />
+                              <polyline points="6 15 12 9 18 15" />
+                            </svg>
                           </button>
                         </div>
                       </div>
                     </div>
                     <div class="w-full px-4">
-                      <div x-show.transition.origin.top="isOpen()" class="absolute left-0 z-40 w-full bg-white rounded shadow-lg top-100 max-h-select" x-on:click.away="close">
+                      <div x-show.transition.origin.top="isOpen()"
+                        class="absolute left-0 z-40 w-full bg-white rounded shadow-lg top-100 max-h-select"
+                        x-on:click.away="close">
                         <div class="flex flex-col w-full h-64 overflow-y-auto">
-                          <template x-for="(option,index) in options" :key="option" class="overflow-auto" >
-                            <div class="w-full border-b rounded-t cursor-pointer border-gray-50 hover:bg-greenYellow-100" @click="select(index,$event)" :class="option.disabled === true? 'disabledOption':'' " >
-                              <div class="relative flex items-center w-full p-2 py-3 pl-2 border-l-2 border-transparent" >
+                          <template x-for="(option,index) in options" :key="option" class="overflow-auto">
+                            <div
+                              class="w-full border-b rounded-t cursor-pointer border-gray-50 hover:bg-greenYellow-100"
+                              @click="select(index,$event)" :class="option.disabled === true? 'disabledOption':'' ">
+                              <div
+                                class="relative flex items-center w-full p-2 py-3 pl-2 border-l-2 border-transparent">
                                 <div class="flex items-center w-full">
                                   <div x-show="option.selected">
-                                    <svg class="w-4 h-4 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 12l5 5l10 -10" /></svg>
+                                    <svg class="w-4 h-4 text-green-500" width="24" height="24" viewBox="0 0 24 24"
+                                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                      stroke-linejoin="round">
+                                      <path stroke="none" d="M0 0h24v24H0z" />
+                                      <path d="M5 12l5 5l10 -10" />
+                                    </svg>
                                   </div>
-                                  <div class="mx-2" x-model="option" x-text="option.text"></div>                                  
+                                  <div class="mx-2" x-model="option" x-text="option.text"></div>
                                 </div>
                               </div>
-                            </div>                            
+                            </div>
                           </template>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </label>           
+              </label>
               <!-- 輸入優惠券 -->
               <label for="" x-show="couponValue!='selectCoupon' && couponValue!=null">
                 <div class="flex">
-                  <input
-                    class="flex-full form-input"
-                    placeholder="請輸入優惠碼"
-                  />
+                  <input class="flex-full form-input" placeholder="請輸入優惠碼" />
                   <button class="w-1/4 mx-3 md:w-1/3 btn-regular btn-color-orange">使用</button>
-                </div>                
-              </label> 
-            </div>                                                                                                   
+                </div>
+              </label>
+            </div>
           </div>
         </div>
       </form>
     </section>
 
     <!-- 結帳資訊 -->
-    <h3 class="section-title">結帳資訊</h3>   
-    <section class="flex flex-col gap-6 mb-12 border border-gray-100 md:py-5 md:px-8 md:flex-row" >
+    <h3 class="section-title">結帳資訊</h3>
+    <section class="flex flex-col gap-6 mb-12 border border-gray-100 md:py-5 md:px-8 md:flex-row">
       <!-- 預估獲得點數 -->
       <div class="w-full md:w-1/2">
         <h4 class="p-3 px-5 text-base text-gray-600 bg-gray-50">
           預估獲得點數
         </h4>
-        <div class="container p-8">            
+        <div class="container p-8">
           <!-- 商品品項 -->
-          <div class="flex flex-col mb-4 md:justify-between md:flex-row">              
+          <div class="flex flex-col mb-4 md:justify-between md:flex-row">
             <h5 class="text-base">商品品項</h5>
             <div class="mt-3 text-left md:text-right md:mt-0">
               <div class="flow-root mb-4">
@@ -665,68 +629,62 @@
               <div class="flow-root mb-4">
                 <p class="mb-1 text-base">星眸彩色日拋隱形眼鏡-心機系列</p>
                 <p class="text-sm text-gray-600">度數 6.00</p>
-              </div>              
-            </div>            
-          </div>
-          
-          <!-- 商品回饋 -->
-          <div class="flex flex-col mb-4 md:justify-between md:flex-row"> 
-            <h5 class="text-base">商品回饋</h5>
-            <div class="mt-3 text-left md:text-right md:mt-0">
-              <p>+ 150 點</p>              
+              </div>
             </div>
           </div>
-        </div>     
+
+          <!-- 商品回饋 -->
+          <div class="flex flex-col mb-4 md:justify-between md:flex-row">
+            <h5 class="text-base">商品回饋</h5>
+            <div class="mt-3 text-left md:text-right md:mt-0">
+              <p>+ 150 點</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 配送金額 -->
       <div class="w-full md:w-1/2">
         <h4 class="p-3 px-5 text-base text-gray-600 bg-gray-50">配送金額</h4>
-        
-        <div class="container p-8">            
+
+        <div class="container p-8">
           <div class="flex flex-col gap-3">
-            <div class="flex justify-between">              
+            <div class="flex justify-between">
               <h5 class="text-base">商品小計</h5>
-              <p class="text-right">NT$1560</p>            
+              <p class="text-right">NT$1560</p>
             </div>
-            <div class="flex justify-between">              
+            <div class="flex justify-between">
               <h5 class="text-base">優惠卷折抵</h5>
-              <p class="text-right">- NT$100</p>            
+              <p class="text-right">- NT$100</p>
             </div>
-            <div class="flex justify-between">              
+            <div class="flex justify-between">
               <h5 class="text-base">點數折抵</h5>
-              <p class="text-right">- NT$30</p>            
+              <p class="text-right">- NT$30</p>
             </div>
-            <div class="flex justify-between">              
+            <div class="flex justify-between">
               <h5 class="text-base">運費</h5>
-              <p class="text-right">免運</p>            
+              <p class="text-right">免運</p>
             </div>
             <hr class="hr-double-line">
-            <div class="flex justify-between">              
+            <div class="flex justify-between">
               <h5 class="text-base">總金額</h5>
-              <p class="text-right">NT$1560</p>            
+              <p class="text-right">NT$1560</p>
             </div>
           </div>
-        </div>          
+        </div>
       </div>
     </section>
-   
+
     <!-- Action -->
     <section class="flex flex-col items-center justify-between gap-4 md:gap-6">
       <div class="flex flex-col w-full gap-2 text-sm md:w-1/2 ">
         <label class="flex ">
-          <input          
-            type="checkbox"
-            class="w-5 h-5 form-checkbox" 
-          />
-          <span class="ml-2">同意會員責任規範及個資聲明與商家會員條。           </span>
+          <input type="checkbox" class="w-5 h-5 form-checkbox" />
+          <span class="ml-2">同意會員責任規範及個資聲明與商家會員條。 </span>
         </label>
         <label class="flex text-sm">
-          <input          
-            type="checkbox"
-            class="w-5 h-5 form-checkbox" 
-          />
-          <span class="ml-2">為保障彼此之權益，賣家在收到您的預訂配送單後仍保有決定是否接受預訂配送單及出貨與否之權利。           </span>
+          <input type="checkbox" class="w-5 h-5 form-checkbox" />
+          <span class="ml-2">為保障彼此之權益，賣家在收到您的預訂配送單後仍保有決定是否接受預訂配送單及出貨與否之權利。 </span>
         </label>
       </div>
       <div class="flex w-full md:w-1/2 ">
@@ -749,11 +707,21 @@
             <p class="text-sm text-gray-400">聯絡我們</p>
             <ul class="items-start">
               <li class="flex flex-wrap my-2 space-x-2">
-                <svg class="w-6 h-6 text-gray-600"  width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+                <svg class="w-6 h-6 text-gray-600" width="16" height="16" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                </svg>
                 <p class="text-sm">+0800000000</p>
               </li>
               <li class="flex flex-wrap my-2 space-x-2">
-                <svg class="w-6 h-6 text-gray-600"  width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="3" y="5" width="18" height="14" rx="2" />  <polyline points="3 7 12 13 21 7" /></svg>
+                <svg class="w-6 h-6 text-gray-600" width="16" height="16" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <polyline points="3 7 12 13 21 7" />
+                </svg>
                 <p class="text-sm">service@enlivlens.com</p>
               </li>
             </ul>
@@ -762,7 +730,12 @@
             <p class="text-sm text-gray-400">關於我們</p>
             <ul class="items-start">
               <li class="flex flex-wrap my-2 space-x-2">
-                <svg class="w-5 h-5 text-gray-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9 12l2 2l4 -4" />  <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
+                <svg class="w-5 h-5 text-gray-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <path d="M9 12l2 2l4 -4" />
+                  <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
+                </svg>
                 <a href="/public/privacy.html" class="text-sm hover:text-greenYellow underline-animation">
                   隱私權政策
                 </a>
@@ -794,7 +767,7 @@
         3.配戴一般隱形眼鏡需經眼科醫師配光鏡取得處方籤，或經驗光人員驗光配鏡，取得配鏡單，並定期接受眼科醫生追蹤檢查。
       </p>
     </div>
-    
+
     <hr class="border-gray-100" />
     <div class="footer-wrapper">
       <p class="text-sm text-center">© enlivlens all rights reserved</p>
@@ -843,49 +816,50 @@
   <script>
     function dropdown() {
       return {
-          options: [],
-          selected: [],
-          show: false,
-          open() { this.show = true },
-          close() { this.show = false },
-          isOpen() { return this.show === true },
-          select(index, event) {
-            if (!this.options[index].disabled) {
-              if (!this.options[index].selected) {
+        options: [],
+        selected: [],
+        show: false,
+        open() { this.show = true },
+        close() { this.show = false },
+        isOpen() { return this.show === true },
+        select(index, event) {
+          if (!this.options[index].disabled) {
+            if (!this.options[index].selected) {
 
-                  this.options[index].selected = true;
-                  this.options[index].element = event.target;
-                  this.selected.push(index);
+              this.options[index].selected = true;
+              this.options[index].element = event.target;
+              this.selected.push(index);
 
-              } else {
-                  this.selected.splice(this.selected.lastIndexOf(index), 1);
-                  this.options[index].selected = false
-              }
+            } else {
+              this.selected.splice(this.selected.lastIndexOf(index), 1);
+              this.options[index].selected = false
             }
-          },
-          remove(index, option) {
-              this.options[option].selected = false;
-              this.selected.splice(index, 1);
-          },
-          loadOptions() {
-              const options = document.getElementById('select-coupon-option').options;
-              for (let i = 0; i < options.length; i++) {
-                  this.options.push({
-                      value: options[i].value,
-                      text: options[i].innerText,
-                      disabled: options[i].disabled,
-                      selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
-                  });
-              }
-          },
-          selectedValues(){
-              return this.selected.map((option)=>{
-                  return this.options[option].value;
-              })
           }
+        },
+        remove(index, option) {
+          this.options[option].selected = false;
+          this.selected.splice(index, 1);
+        },
+        loadOptions() {
+          const options = document.getElementById('select-coupon-option').options;
+          for (let i = 0; i < options.length; i++) {
+            this.options.push({
+              value: options[i].value,
+              text: options[i].innerText,
+              disabled: options[i].disabled,
+              selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
+            });
+          }
+        },
+        selectedValues() {
+          return this.selected.map((option) => {
+            return this.options[option].value;
+          })
+        }
       }
-  }
+    }
   </script>
   <script src="./assets/js/style.js"></script>
 </body>
+
 </html>
