@@ -276,6 +276,58 @@ nav {
   height: 5px !important;
 }
 
+
+/* flagship-item */
+.text-content {
+  position: absolute;
+  width: 80%;
+  background: transparent;
+  padding: 8px 16px 8px 8px;
+  z-index: 999;
+  
+}
+
+.text-content.bottom{
+  background: rgb(255 255 255);
+  left: 0;
+  bottom: 32px;
+  padding: 16px;
+}
+
+.card-tall {
+  grid-row: span 2 / auto;
+}
+
+.card-wide {
+  grid-column: span 2 / auto;
+}
+
+.flagship-item {
+  @apply relative flex p-3 overflow-hidden bg-white rounded-md shadow-xl border-gray-50;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.flagship-item hover{
+  @apply p-0;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.flagship-item img {
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.flagship-item.card-wide.card-tall img {
+  max-height: 400px;
+}
+
+
+
+
+
 /* Buttons */
 
 @layer components {

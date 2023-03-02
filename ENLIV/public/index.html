@@ -154,22 +154,25 @@
   <!-- Hero Banner -->
   <div class="container mx-auto max-w-7xl hero-banner">
     <!-- Slide Banner -->
-    <div class="overflow-hidden rounded-sm shadow-xl owl-carousel owl-theme md:rounded-xl">
+    <div class="overflow-hidden rounded-none shadow-xl owl-carousel owl-theme md:rounded-xl">
       <div class="item">
-        <img src="./assets/img/demo-index-banner01.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="./assets/img/demo-index-banner02.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="./assets/img/demo-index-banner03.jpg" alt="">
-      </div>
-      <div class="rtem">
-        <img src="./assets/img/demo-index-banner01.jpg" alt="">
+        <picture>
+            <source srcset="./assets/img/demo-index-banner01-mobile.jpg" media="(max-width:640px)">
+            <img srcset="./assets/img/demo-index-banner01.jpg">
+        </picture>
       </div>
       <div class="item">
-        <img src="./assets/img/demo-index-banner02.jpg" alt="">
+        <picture>
+            <source srcset="./assets/img/demo-index-banner02-mobile.jpg" media="(max-width:640px)">
+            <img srcset="./assets/img/demo-index-banner02.jpg">
+        </picture>
       </div>
+      <div class="item">
+        <picture>
+            <source srcset="./assets/img/demo-index-banner03-mobile.jpg" media="(max-width:640px)">
+            <img srcset="./assets/img/demo-index-banner03.jpg">
+        </picture>
+      </div>      
     </div>
   </div>
 
@@ -180,50 +183,44 @@
     </h2>
     
     <!-- banner -->
-    <section class="container py-8 pb-10 mx-auto">
+    <section class="container px-4 py-8 pb-10 mx-auto md:px-0">
       <div class="container grid gap-2 lg:grid-cols-4 lg:grid-rows-2">
         <!-- left -->
         <div
-          class="relative flex col-span-2 row-span-2 row-start-1 p-3 overflow-hidden bg-white border rounded-md shadow-xl border-gray-50 border-slate-200">
-          <div class="w-2/3 p-6 lg:1/3">
+          class="flagship-item card-wide card-tall">
+          <img src="https://www.ticon.com.tw/lens-class/user_upload/images/%E5%BD%A9%E8%89%B2%E9%9A%B1%E5%BD%A2%E7%9C%BC%E9%8F%A1%E6%8E%A8%E8%96%A6.jpg" class="object-cover object-center-center"
+              alt="" />
+          <div class="text-content bottom">
             <h3 class="text-xl font-medium text-gray-700">美麗主張® 清新潔淨保養液-360ml</h3>
-            <p class="mt-2 text-slate-500">Ultra Clear Solution</p>
-          </div>
-          <div class="w-1/3 lg:2/3"><img src="./assets/img/demo-product-banner01.jpg" class="object-cover object-right-bottom "
-              alt="" /></div>
+            <p class="text-slate-500">Ultra Clear Solution</p>
+          </div>          
         </div>
 
         <!-- right top 1-->
-        <div class="relative flex flex-col bg-white border rounded-md shadow-xl md:flex-row border-gray-50 border-slate-200">
-          <div class="relative w-full p-6 md:w-2/3 lg:1/2">
+        <div class="flagship-item md:flex-row">
+          <img src="./assets/img/demo-product-banner02.jpg" class="" alt="" />
+          <div class="text-content">
             <h3 class="text-xl font-medium text-gray-700">無汞生理緩衝液</h3>
-            <p class="mt-2 text-slate-500">360ml</p>
-          </div>
-          <div class="flex items-center justify-center w-full md:w-1/3 lg:1/2">
-            <img src="./assets/img/demo-product-banner02.jpg" class="" alt="" />
-          </div>
+            <p class="text-slate-500">360ml</p>
+          </div>          
         </div>
 
         <!-- right top 2-->
-        <div class="relative flex flex-col bg-white border rounded-md shadow-xl md:flex-row border-gray-50 border-slate-200">
-          <div class="relative w-full p-6 md:w-2/3 lg:1/2">
+        <div class="flagship-item md:flex-row">
+          <img src="./assets/img/demo-product-banner03.jpg" class="" alt="" />
+          <div class="text-content">
             <h3 class="text-xl font-medium text-gray-700">無汞生理緩衝液</h3>
-            <p class="mt-2 text-slate-500">360ml</p>
-          </div>
-          <div class="flex items-center justify-center w-full md:w-1/3 lg:1/2">
-            <img src="./assets/img/demo-product-banner03.jpg" class="" alt="" />
-          </div>
+            <p class="text-slate-500">360ml</p>
+          </div>          
         </div>
 
         <!-- right bottom -->
-        <div class="flex col-span-2 p-3 bg-white border rounded-md shadow-xl border-gray-50 border-slate-200">
-          <div class="w-2/3 p-6 lg:1/3">
+        <div class="flagship-item card-wide">
+          <img src="./assets/img/demo-product-banner04.jpg" class="object-cover object-left-top " alt="" />
+          <div class="text-content">
             <h3 class="text-xl font-medium text-gray-700">海昌真水感月拋隱形眼鏡</h3>
-            <p class="mt-2 text-slate-500">榮獲2015台灣精品獎</p>
-          </div>
-          <div class="w-1/3 lg:2/3">
-            <img src="./assets/img/demo-product-banner04.jpg" class="object-cover object-left-top " alt="" />
-          </div>
+            <p class="text-slate-500">榮獲2015台灣精品獎</p>
+          </div>         
         </div>
       </div>
     </section>
@@ -710,6 +707,7 @@
       margin: 10,
       nav: false,
       dot: false,
+      autoHeight:true,
       responsive: {
         0: {
           items: 1
