@@ -280,10 +280,11 @@ nav {
 /* flagship-item */
 .text-content {
   position: absolute;
-  width: 80%;
-  background: transparent;
+  max-width: 80%;
+  /* background: transparent; */
   padding: 8px 16px 8px 8px;
   z-index: 999;
+  background: rgb(255 255 255);
   
 }
 
@@ -316,6 +317,7 @@ nav {
 .flagship-item img {
   width: 100%;
   object-fit: cover;
+  object-position: center;
   transform: scale(1);
   transition: all 0.3s ease-in-out;
 }
@@ -324,8 +326,13 @@ nav {
   max-height: 400px;
 }
 
+.container .flagship-item{
+  max-height:200px;
+}
 
-
+.container .flagship-item:first-of-type{
+  max-height:408px
+}
 
 
 /* Buttons */
