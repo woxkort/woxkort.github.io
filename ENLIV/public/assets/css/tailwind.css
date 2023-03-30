@@ -325,6 +325,8 @@ nav {
 .flagship-item.flex-row img{
   object-fit: contain;
   object-position: right bottom;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen(md) {
