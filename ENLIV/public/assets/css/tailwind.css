@@ -233,7 +233,7 @@ nav {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 9999;
+  z-index: 50;
 }
 
 .navbar-fixed .nav-row {
@@ -283,7 +283,7 @@ nav {
   position: absolute;
   max-width: 80%;
   padding: 8px 16px 8px 8px;
-  z-index: 999;
+  z-index: 10;
   background: rgb(255 255 255);
 }
 
